@@ -1,0 +1,72 @@
+#agenda {
+	background: url('../img/bg/agenda.jpg') no-repeat center top;
+	background-size: cover;
+	padding: 200px 0 0 0;
+	.calendar-wrapper {
+		width: 970px;
+	}
+	h2 {
+		font-family: 'Monserrat-ultralight';
+		font-size: 38px;
+		color: #fff;
+		font-weight: 100;
+		text-transform: uppercase;
+		margin: 0 0 20px 0;
+	}
+	.sync-link {
+		font-family: 'Monserrat-ultralight';
+		font-size: 14px;
+		color: #fff;
+		font-weight: 100;
+		&:before {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 10px 0 0;
+		}
+	}
+	.current-event {
+		width: 570px;
+		padding: 30px;
+		vertical-align: bottom;
+	}
+	.current-event-title {
+		font-family: 'Monserrat-regular';
+		font-size: 20px;
+		color: #333333;
+		text-transform: uppercase;
+		font-weight: 100;
+	}
+	.current-event-text {
+		font-family: 'Monserrat-light';
+		font-size: 14px;
+		color: #333333;
+		font-weight: 100;
+		margin: 10px 0;
+	}
+	.current-event-place {
+		font-family: 'Monserrat-light';
+		font-size: 14px;
+		color: #333333;
+		font-weight: 100;
+		margin: 10px 0 0 0;
+	}
+	.current-event-hour {
+		font-family: 'Monserrat-light';
+		font-size: 14px;
+		color: #333333;
+		font-weight: 100;
+		margin: 0 0 10px 0;
+	}
+	.calendar {
+		width: 370px;
+		height: 480px;
+		vertical-align: bottom;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0078b4+0,005078+100 */
+		background: #0078b4; /* Old browsers */
+		background: -moz-linear-gradient(-45deg,  #0078b4 0%, #005078 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(-45deg,  #0078b4 0%,#005078 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(135deg,  #0078b4 0%,#005078 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0078b4', endColorstr='#005078',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+
+}

@@ -1,0 +1,124 @@
+#events {
+	background: url('../img/bg/events.jpg') no-repeat center top;
+	background-size: cover;
+	padding: 90px 0 80px 0;
+	h2 {
+		font-family: 'Monserrat-ultralight';
+		font-size: 38px;
+		color: #010101;
+		font-weight: 100;
+		text-transform: uppercase;
+	}
+	h3 {
+		font-family: 'Monserrat-regular';
+		font-size: 15px;
+		color: #010101;
+		font-weight: 100;
+		text-transform: uppercase;
+	}
+	p {
+		font-family: 'Monserrat-regular';
+		font-size: 15px;
+		color: #010101;
+	}
+	.event {
+		position: relative;
+		display: table;
+		margin: 65px 0 115px 0;
+	}
+	.events-list {
+		width: 770px;
+	}
+	.event-image {
+		float: left;
+		width: 370px;
+	}
+	.event-content {
+		position: relative;
+		float: left;
+		width: 400px;
+	}
+	.event-date {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 90px;
+		height: 90px;
+		-webkit-border-radius: 50px;
+		border-radius: 50px;
+		background: #0075af; /* Old browsers */
+		background: -moz-linear-gradient(-45deg,  #0075af 0%, #00517a 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(-45deg,  #0075af 0%,#00517a 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(135deg,  #0075af 0%,#00517a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0075af', endColorstr='#00517a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+	.event-name {
+		font-family: 'Monserrat-regular';
+		font-size: 20px;
+		color: #333333;
+		text-transform: uppercase;
+		font-weight: 100;
+		margin: 0 100px 15px 30px;
+	}
+	.event-description {
+		font-family: 'Monserrat-light';
+		font-size: 14px;
+		color: #010101;
+		margin: 0 100px 15px 30px;
+	}
+	.event-summary {
+		font-family: 'Monserrat-light';
+		font-size: 14px;
+		color: #010101;
+		padding: 30px;
+	}
+	.icon-event-link:before {
+		position: absolute;
+		right: 30px;
+		bottom: -20px;
+	}
+	.revert {
+		.event-image {
+			float: right;
+		}
+		.event-content {
+			float: left;
+		}
+		.event-date {
+			left: 0;
+			right: auto;
+		}
+		.event-name,
+		.event-description {
+			margin: 0 30px 15px 100px;
+		}
+		.icon-event-link:before {
+			right: auto;
+			left: 30px;
+		}
+	}
+	.more-event-button {
+		position: relative;
+		font-size: 17px;
+		color: #fff;
+		padding: 15px 50px 15px 30px;
+		background: #050b28;
+		text-transform: uppercase;
+		border: 0 none;
+		cursor: pointer;
+		outline: none;
+		-webkit-transition: all 0.4s ease-in-out;
+		-moz-transition: all 0.4s ease-in-out;
+		-ms-transition: all 0.4s ease-in-out;
+		-o-transition: all 0.4s ease-in-out;
+		transition: all 0.4s ease-in-out;
+		&:hover {
+			background: rgba(10, 17, 51, 0.86);
+		}
+	}
+	.icon-more:before {
+		position: absolute;
+		top: 48%;
+		right: 20px;
+	}
+}

@@ -1,0 +1,22 @@
+/* 
+ Brut Asso main styles
+ ============================================*/
+
+@import 'reset';
+@import 'fonts';
+@import 'components/helpers';
+@import 'components/header';
+@import 'components/home';
+@import 'components/about';
+@import 'components/events';
+@import 'components/agenda';
+
+.loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	background: #4D656D;
+}

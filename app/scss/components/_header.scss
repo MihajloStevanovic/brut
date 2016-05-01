@@ -1,0 +1,42 @@
+/* Header */
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  //background: rgba(0, 80, 120, 0.1);
+  background: rgba(0, 80, 120, 1);
+  z-index: 2;
+  /* -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  -ms-transition: background 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out; */
+  .logo {
+    float: left;
+  }
+  .navigation {
+    float: right;
+    li {
+      float: left;
+      a {
+        display: block;
+        font-family: 'Monserrat-light';
+        font-size: 17px;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 0 15px;
+        -webkit-transition: background 0.2s ease-in-out;
+        -moz-transition: background 0.2s ease-in-out;
+        -ms-transition: background 0.2s ease-in-out;
+        -o-transition: background 0.2s ease-in-out;
+        transition: background 0.2s ease-in-out;
+        &:hover {
+          background: rgba(5, 11, 40, 0.17);
+        }
+      }
+    }
+  }
+}
