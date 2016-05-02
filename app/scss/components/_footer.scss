@@ -1,0 +1,22 @@
+#footer {
+	background: #000;
+	height: 90px;
+	line-height: 90px;
+	font-family: 'Monserrat-regular';
+	font-size: 15px;
+	color: #fff;
+	.footer-wrapper {
+		width: 1170px;
+	}
+	.copyrights {
+
+	}
+	a {
+		display: block;
+	}
+	ul, li {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 0 0 10px;
+	}
+}

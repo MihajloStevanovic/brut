@@ -1,0 +1,107 @@
+#contact {
+	padding: 110px 0 90px 0;
+	.contact-wrapper {
+		width: 1170px;
+	}
+	.how-contact {
+		width: 682px;
+		margin: 0 0 0 30px;
+		border-right: 1px solid #000;
+		-webkit-box-sizing: border-box;
+		box-sizing: border;
+		h3, a {
+			display: block;
+			position: relative;
+			font-family: 'Monserrat-light';
+			font-size: 15px;
+			color: #000;
+			font-weight: 100;
+			margin: 20px 0 5px 0;
+			padding: 0 0 0 40px;
+		}
+		.icon-mail {
+			margin: 20px 0 35px 0;
+		}
+	}
+	address {
+		font-style: normal;
+	}
+	h2 {
+		display: inline-block;
+		font-size: 38px;
+		text-transform: uppercase;
+		font-weight: 100;
+		margin: 60px 0 0 0;
+		padding: 0 35px 0 0;
+		border-bottom: 1px solid #000;
+
+	}
+	h2:after {
+		display: block;
+		content: '';
+		width: 50px;
+		height: 3px;
+		background: #000;
+		margin: 10px 0 0 0;
+	}
+	
+	.phone-number {
+		font-family: 'Monserrat-ultralight';
+		font-size: 15px;
+		font-weight: 100;
+		line-height: 1.4;
+		padding: 0 0 0 40px;
+	}
+	.where-contact {
+		width: 458px;
+		padding: 0 0 0 30px;
+		-webkit-box-sizing: border-box;
+		box-sizing: border;
+		h3 {
+			font-family: 'Monserrat-ultralight';
+			font-size: 24px;
+			text-transform: uppercase;
+			font-weight: 100;
+		}
+		h3:after {
+			display: block;
+			content: '';
+			width: 50px;
+			height: 3px;
+			background: #000;
+			margin: 10px 0 0 0;
+		}
+		.where-row {
+			padding: 25px 0;
+			border-top: 1px solid #000;
+		}
+		h4 {
+			position: relative;
+			font-family: 'Monserrat-ultralight';
+			font-size: 13px;
+			text-transform: uppercase;
+			font-weight: 100;
+			padding: 0 0 0 65px;
+		}
+		p, li {
+			font-family: 'Monserrat-regular';
+			font-size: 14px;
+			line-height: 1.4;
+			margin: 5px 0;
+			padding: 0 0 0 65px;
+		}
+	}
+
+	.icon-mail:before,
+	.icon-phone:before,
+	.icon-calendar-large:before,
+	.icon-map-point:before,
+	.icon-map:before {
+		position: absolute;
+		left: 0;
+	}
+	.icon-mail:before,
+	.icon-phone:before {
+		top: -7px;
+	}
+}
