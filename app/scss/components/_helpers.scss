@@ -4,6 +4,7 @@
 
 .valign-wrapper {display:table;width:100%;}
 .valign-content {display:table-cell;vertical-align:middle;}
+.valign-bottom {vertical-align: bottom};
 
 .relative {position:relative}
 .absolute {position:absolute}
@@ -31,6 +32,13 @@
 
 .table {display: table;}
 .cell {display: table-cell;}
+
+.tab-content {
+	display: none;
+	&.active {
+		display: block;
+	}
+}
 
 .icon:before {
 	display: block;

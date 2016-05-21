@@ -15,16 +15,16 @@
 			</div>
 			<nav class="navigation">
 				<ul>
-					<li><a href="#" title="à propos">à propos</a></li>
-					<li><a href="#" title="côté sportif">côté sportif</a></li>
-					<li><a href="#" title="agenda">agenda</a></li>
-					<li><a href="#" title="partenaires">partenaires</a></li>
-					<li><a href="#" title="où nous trouver">où nous trouver</a></li>
+					<li><a href="#" title="à propos" data-section="about">à propos</a></li>
+					<li><a href="#" title="côté sportif" data-section="events">côté sportif</a></li>
+					<li><a href="#" title="agenda" data-section="agenda">agenda</a></li>
+					<li><a href="#" title="partenaires" data-section="partners">partenaires</a></li>
+					<li><a href="#" title="où nous trouver" data-section="contact">où nous trouver</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
-	<section class="relative table valign-wrapper" id="home">
+	<section class="section relative table valign-wrapper" id="home">
 		<div class="valign-content">
 			<h1 class="home-title">Association des anciens joueurs <br />des Universités de Technologie</h1>
 			<p class="home-description">L’esprit Barbarians, c’est avant tout d’intégrer<br />des joueurs qui portent l’esprit de ce beau<br />jeu sur le terrain et dans la vie</p>
@@ -39,7 +39,7 @@
 		</div>
 		<a href="#" class="icon icon-scroll-down"></a>
 	</section>
-	<section id="about">
+	<section class="section" id="about">
 		<div class="wrapper auto table">
 			<article class="cell col-left">
 				<h2 class="title-section">A propos</h2>
@@ -47,17 +47,19 @@
 				<p class="ultra-light">L’association BRUT a été créée en 2009, à l'initiative de deux anciens rugbymen des Universités de Technologie. Très vite, le club intègre le championnat sport en entreprise FFSE (Corpo TOP14) ou les résultats sont séduisants. Depuis, le BRUT n'a cessé de croître en s'appuyant sur la venue de nouveaux diplômés. Cette association à pour but de permettre la pratique du rugby dans un cadre priviligié tout en conciliant les contraintes professionelles ou privées de chacun.</p>
 				<p class="ultra-light bg-white">Vous trouverez ici toutes les informations relatives à notre fonctionnement, la confiance de nos partenaires et l'agenda des prochains évènements sportifs et extra sportifs.</p>
 			</article>
-			<article class="cell col-center bg-yellow">
-				<p class="regular">Nous avons bâti le BRUT autour d'anciens joueurs des UTs partageant  la même conviction, celle que le rugby est une formidable école de la vie et un sport où l'épanouissement est à la fois collectif et individuel. A travers cet engagement sportif et associatif, nous agissons à développer un important réseau d'anciens étudiants des UTs. Déjà présentes dans nos vies, nous diffusons également par le BRUT les valeurs du rugby dans nos entreprises afin de les rendre plus solidaires, plus humaines et plus performantes.</p>
-				<p class="quote icon icon-quote">Le meilleur moyen d'atteindre son objectif au rugby est d'aider les autres à atteindre le leur.</p>
-				<div class="author ultra-light">- Johny Wilkinson</div>
+			<article class="cell col-center">
+				<div class="bg-yellow">
+					<p class="regular">Nous avons bâti le BRUT autour d'anciens joueurs des UTs partageant  la même conviction, celle que le rugby est une formidable école de la vie et un sport où l'épanouissement est à la fois collectif et individuel. A travers cet engagement sportif et associatif, nous agissons à développer un important réseau d'anciens étudiants des UTs. Déjà présentes dans nos vies, nous diffusons également par le BRUT les valeurs du rugby dans nos entreprises afin de les rendre plus solidaires, plus humaines et plus performantes.</p>
+					<p class="quote icon icon-quote">Le meilleur moyen d'atteindre son objectif au rugby est d'aider les autres à atteindre le leur.</p>
+					<div class="author ultra-light">- Johny Wilkinson</div>
+				</div>
 			</article>
 			<div class="cell col-right">
 				<div class="fb-posts"></div>
 			</div>
 		</div>
 	</section>
-	<section id="events">
+	<section class="section" id="events">
 		<header class="text-center">
 			<h2>cote sportifs</h2>
 			<h3>une saison type</h3>
@@ -105,50 +107,79 @@
 			</div>
 		</div>
 	</section>
-	<section id="agenda">
+	<section class="section" id="agenda">
 		<header class="calendar-wrapper auto">
 			<h2 class="cl-fff">aganda</h2>
 			<a href="#" class="sync-link icon icon-calendar">Synchroniser avec mon agenda</a>
 		</header>
 		<div class="calendar-wrapper auto table">
-			<article class="current-event bg-white cell">
-				<div class="current-event-date">
-					<div class="current-event-day">21</div>
-					<div class="current-event-month">Jul</div>
-				</div>
-				<div class="current-event-content">
-					<h3 class="current-event-title">Le match BRUT / UTC</h3>
-					<p class="current-event-text">La remise des diplômes<br />Ce tournoi réunit  des joueurs et des joueuses autour du jeu mais également des valeurs du rugby transposables à l'entreprise :</p>
-					<div class="current-event-place">Lieu : <span class="underline">Stade Ballard3 </span></div>
-					<div class="current-event-hour">Horaires de rendez-vous 16h30</div>
+			<article class="cell valign-bottom ">
+				<div class="current-event bg-white">
+					<div class="current-event-date">
+						<div class="current-event-day">21</div>
+						<div class="current-event-month">Jul</div>
+					</div>
+					<div class="current-event-content">
+						<h3 class="current-event-title">Le match BRUT / UTC</h3>
+						<p class="current-event-text">La remise des diplômes<br />Ce tournoi réunit  des joueurs et des joueuses autour du jeu mais également des valeurs du rugby transposables à l'entreprise :</p>
+						<div class="current-event-place">Lieu : <span class="underline">Stade Ballard3 </span></div>
+						<div class="current-event-hour">Horaires de rendez-vous 16h30</div>
+					</div>
 				</div>
 			</article>
 			<div class="calendar cell"></div>
 		</div>
 	</section>
-	<section id="partners">
+	<section class="section" id="partners">
 		<div class="partners-wrapper auto table">
-			<div class="partners-tabs-wrapper floated">
-				<div class="partners-tabs-nav">
+			<div class="tabs partners-tabs-wrapper floated">
+				<div class="tab-nav partners-tabs-nav">
 					<ul>
-						<li class="active">nos partenaires</li>
-						<li>nos écoles</li>
+						<li class="tab-link active" data-tab-id="partnersTab">nos partenaires</li>
+						<li class="tab-link" data-tab-id="schoolTab">nos écoles</li>
 					</ul>
 				</div>
 				<div class="partners-content">
-					<div id="partners-tab">
+					<div class="tab-content active" id="partnersTab">
 						<p>Pour contribuer au dynamisme de notre belle association, nous avons obtenu la confiance de partenaires sensibles aux valeurs du rugby.<br />Pour la saison 2015 / 2016 ALTEN et F.Iniciativas ont choisi de nous soutenir.</p><p>Depuis 20 ans, F.Iniciativas a su devenir le spécialiste du financement de la recherche et de l’innovation.<br />Grâce à une équipe de 600 collaborateurs hautement qualifiés, nous nous engageons à accompagner les entreprises de toute taille et dans tout secteur d’activité.<br />Numérique, Chimie, Agroalimentaire, Industrie… Tous nos experts sont ingénieurs ou docteurs et connaissent parfaitement votre domaine d’expertise !Fort de son expertise en ingénierie fiscale, F.Iniciativas détermine les subventions auxquelles vous pouvez prétendre, reconnaît les projets éligibles aux dispositifs concernant la Recherche et le Développement, vous aide à remplir votre feuillet fiscal, et vous apporte un soutien technique lors de contrôles de l’administration fiscale.</p>
+						<ul class="partners-list">
+							<li class="partner-link active" data-partner-id="pco">
+								<div class="partner-logo"><img src="img/partners/pco.png"></div>
+								<p class="partner-text">PCO Innovation est le leader mondial indépendant spécialisé dans le domaine de la gestion du cycle de vie des produits (PLM : Product Lifecycle Management).</p>
+							</li>
+							<li class="partner-link" data-partner-id="hamon">
+								<div class="partner-logo"><img src="img/partners/hamon.png"></div>
+								<p class="partner-text">Après un premier partenariat en 2011, le Hamon Thermal Europe France renouvelle son soutien pour la saison 2012-2013.</p>
+							</li>
+							<li class="partner-link" data-partner-id="malban">
+								<div class="partner-logo"><img src="img/partners/malban.png"></div>
+								<p class="partner-text">Après un premier partenariat en 2011, le Hamon Thermal Europe France renouvelle son soutien pour la saison 2012-2013.</p>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-content" id="schoolTab">
+						school
 					</div>
 				</div>
 			</div>
 			<div class="current-partners floated-right">
-				<p>Établir la bonne stratégie PLM, réduire les risques et les coûts de mise en œuvre et de possession, accroître l’efficacité des différents acteurs de l’innovation grâce à une meilleure utilisation de leurs solutions PLM : voilà autant de problématiques auxquelles les entreprises sont confrontées et qui nécessitent des transformations profondes de l’organisation, des processus et du système d’information.</p>
-				<p>C’est pour permettre aux entreprises de réussir ces transformations que PCO Innovation met à disposition une offre de services complète, tant sur les connaissances métiers que sur le domaine des technologies, portée par une force de frappe de plus de 600 professionnels et experts intervenant sur les 5 continents. PCO Innovation compte parmi ses clients de nombreux acteurs majeurs des domaines suivants : Aéronautique & Défense, Automobile & Transport, Équipements industriels, Électronique & High-Tech, Ingénierie & Process, Pharmacie & Agroalimentaire, etc.</p>
-				<p>Expertise, agilité et qualité sont les principes fondamentaux de l’offre PCO Innovation. En complément de son savoir-faire en conseil, en intégration technologique, en conduite de projets et du changement ou en support et maintenance, PCO Innovation propose une expertise technologique forte sur l’ensemble des briques du système d’information PLM, tant en termes de création d’information (CFAO, calcul) que de gestion collaborative (PDM, MPM). PCO Innovation dispose de partenariats opérationnels avec les principaux éditeurs de </p>
+				<div class="partner-detail active" id="pco">
+					<p>Établir la bonne stratégie PLM, réduire les risques et les coûts de mise en œuvre et de possession, accroître l’efficacité des différents acteurs de l’innovation grâce à une meilleure utilisation de leurs solutions PLM : voilà autant de problématiques auxquelles les entreprises sont confrontées et qui nécessitent des transformations profondes de l’organisation, des processus et du système d’information.</p>
+					<p>C’est pour permettre aux entreprises de réussir ces transformations que PCO Innovation met à disposition une offre de services complète, tant sur les connaissances métiers que sur le domaine des technologies, portée par une force de frappe de plus de 600 professionnels et experts intervenant sur les 5 continents. PCO Innovation compte parmi ses clients de nombreux acteurs majeurs des domaines suivants : Aéronautique & Défense, Automobile & Transport, Équipements industriels, Électronique & High-Tech, Ingénierie & Process, Pharmacie & Agroalimentaire, etc.</p>
+					<p>Expertise, agilité et qualité sont les principes fondamentaux de l’offre PCO Innovation. En complément de son savoir-faire en conseil, en intégration technologique, en conduite de projets et du changement ou en support et maintenance, PCO Innovation propose une expertise technologique forte sur l’ensemble des briques du système d’information PLM, tant en termes de création d’information (CFAO, calcul) que de gestion collaborative (PDM, MPM). PCO Innovation dispose de partenariats opérationnels avec les principaux éditeurs de </p>
+				</div>
+				<div class="partner-detail" id="hamon">
+					<p>Établir la bonne stratégie PLM, réduire les risques et les coûts de mise en œuvre et de possession, accroître l’efficacité des différents acteurs de l’innovation grâce à une meilleure utilisation de leurs solutions PLM : voilà autant de problématiques auxquelles les entreprises sont confrontées et qui nécessitent des transformations profondes de l’organisation, des processus et du système d’information.</p>
+				</div>
+				<div class="partner-detail" id="malban">
+					<p>Établir la bonne stratégie PLM, réduire les risques et les coûts de mise en œuvre et de possession, accroître l’efficacité des différents acteurs de l’innovation grâce à une meilleure utilisation de leurs solutions PLM : voilà autant de problématiques auxquelles les entreprises sont confrontées et qui nécessitent des transformations profondes de l’organisation, des processus et du système d’information.</p>
+					<p>C’est pour permettre aux entreprises de réussir ces transformations que PCO Innovation met à disposition une offre de services complète, tant sur les connaissances métiers que sur le domaine des technologies, portée par une force de frappe de plus de 600 professionnels et experts intervenant sur les 5 continents. PCO Innovation compte parmi ses clients de nombreux acteurs majeurs des domaines suivants : Aéronautique & Défense, Automobile & Transport, Équipements industriels, Électronique & High-Tech, Ingénierie & Process, Pharmacie & Agroalimentaire, etc.</p>
+				</div>
+				<a href="#">Découvrez PCO nnovation</a>
 			</div>
 		</div>
 	</section>
-	<section id="contact">
+	<section class="section" id="contact">
 		<div class="contact-wrapper auto table">
 			<div class="how-contact floated">
 				<h2 class="ultra-light">Contactez-nous</h2>
