@@ -1,10 +1,10 @@
 #partners {
 	.partners-wrapper {
-		width: 1170px;
+		width: 1280px;
 	}
 	.partners-tabs-wrapper {
-		width: 730px;
-		padding: 90px 0 0 30px;
+		width: 740px;
+		padding: 90px 0 0 85px;
 		-webkit-box-sizing: border-box;
 		box-sizing: border;
 	}
@@ -71,24 +71,27 @@
 			}
 		}
 	}
-	.current-partners {
-		width: 440px;
-		height: 765px;
-		padding: 0px 45px 0 45px;
+	.current-partners-wrapper {
+		width: 540px;
+		padding: 0px 40px 0 50px;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
-		overflow-y: scroll;
 		background: #333333; /* Old browsers */
 		background: -moz-linear-gradient(-45deg,  #333333 0%, #010101 100%); /* FF3.6-15 */
 		background: -webkit-linear-gradient(-45deg,  #333333 0%,#010101 100%); /* Chrome10-25,Safari5.1-6 */
 		background: linear-gradient(135deg,  #333333 0%,#010101 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#010101',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-		.partner-detail {
+		.partner-detail-wrapper {
 			display: none;
-			margin: 50px 0;
+			position: relative;
+			padding: 70px 0 95px 0;
 			&.active {
 				display: block;
 			}
+		}
+		.partner-detail-inner {
+			border-right: 1px solid #fff;
+			padding: 0 30px 0 0;
 		}
 		p {
 			font-family: 'Monserrat-ultralight';
@@ -98,5 +101,21 @@
 			padding: 25px 0;
 			line-height: 1.4;
 		}
+		.partner-discover-link {
+			position: absolute;
+		    bottom: 30px;
+		    margin: 0 auto;
+		    width: 100%;
+		    text-align: center;
+		    color: #fff;
+			font-family: 'Monserrat-light';
+			font-size: 15px;
+			span {
+				font-weight: 700;
+			}
+		}
+	}
+	.slimScrollBar {
+		opacity: 1 !important;
 	}
 }

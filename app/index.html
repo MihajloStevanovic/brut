@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Association Brut</title>
+	<link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.min.css">
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -32,12 +33,13 @@
 		<div class="absolute partners bg-white">
 			<div class="wrapper auto">
 				<ul>
-					<li><a href="#" title="pco innovation"><img src="img/partners/pco.png" alt="pco innovation"></a></li>
-					<li><a href="#" title="hamon"><img src="img/partners/hamon.png" alt="hamon"></a></li>
+					<li><a href="#" title="PCO innovation"><img src="img/partners/pco.png" alt="PCO innovation"></a></li>
+					<li><a href="#" title="Hamon"><img src="img/partners/hamon.png" alt="Hamon"></a></li>
+					<li><a href="#" title="Malban"><img src="img/partners/malban.png" alt="Malban"></a></li>
 				</ul>
 			</div>
 		</div>
-		<a href="#" class="icon icon-scroll-down"></a>
+		<a href="#" class="icon icon-scroll-down scroll-down" title="à propos" data-section="about"></a>
 	</section>
 	<section class="section" id="about">
 		<div class="wrapper auto table">
@@ -108,18 +110,18 @@
 		</div>
 	</section>
 	<section class="section" id="agenda">
-		<header class="calendar-wrapper auto">
+		<header class="agenda-wrapper auto">
 			<h2 class="cl-fff">aganda</h2>
 			<a href="#" class="sync-link icon icon-calendar">Synchroniser avec mon agenda</a>
 		</header>
-		<div class="calendar-wrapper auto table">
-			<article class="cell valign-bottom ">
+		<div class="agenda-wrapper auto table">
+			<article class="cell valign-bottom">
 				<div class="current-event bg-white">
-					<div class="current-event-date">
+					<div class="current-event-date floated">
 						<div class="current-event-day">21</div>
 						<div class="current-event-month">Jul</div>
 					</div>
-					<div class="current-event-content">
+					<div class="current-event-content floated">
 						<h3 class="current-event-title">Le match BRUT / UTC</h3>
 						<p class="current-event-text">La remise des diplômes<br />Ce tournoi réunit  des joueurs et des joueuses autour du jeu mais également des valeurs du rugby transposables à l'entreprise :</p>
 						<div class="current-event-place">Lieu : <span class="underline">Stade Ballard3 </span></div>
@@ -127,7 +129,11 @@
 					</div>
 				</div>
 			</article>
-			<div class="calendar cell"></div>
+			<div class="calendar-wrapper cell">
+				<div class="calendar-inner">
+					<div class="calendar"></div>
+				</div>
+			</div>
 		</div>
 	</section>
 	<section class="section" id="partners">
@@ -144,15 +150,15 @@
 						<p>Pour contribuer au dynamisme de notre belle association, nous avons obtenu la confiance de partenaires sensibles aux valeurs du rugby.<br />Pour la saison 2015 / 2016 ALTEN et F.Iniciativas ont choisi de nous soutenir.</p><p>Depuis 20 ans, F.Iniciativas a su devenir le spécialiste du financement de la recherche et de l’innovation.<br />Grâce à une équipe de 600 collaborateurs hautement qualifiés, nous nous engageons à accompagner les entreprises de toute taille et dans tout secteur d’activité.<br />Numérique, Chimie, Agroalimentaire, Industrie… Tous nos experts sont ingénieurs ou docteurs et connaissent parfaitement votre domaine d’expertise !Fort de son expertise en ingénierie fiscale, F.Iniciativas détermine les subventions auxquelles vous pouvez prétendre, reconnaît les projets éligibles aux dispositifs concernant la Recherche et le Développement, vous aide à remplir votre feuillet fiscal, et vous apporte un soutien technique lors de contrôles de l’administration fiscale.</p>
 						<ul class="partners-list">
 							<li class="partner-link active" data-partner-id="pco">
-								<div class="partner-logo"><img src="img/partners/pco.png"></div>
+								<div class="partner-logo"><img src="img/partners/pco.png" alt="PCO innovation"></div>
 								<p class="partner-text">PCO Innovation est le leader mondial indépendant spécialisé dans le domaine de la gestion du cycle de vie des produits (PLM : Product Lifecycle Management).</p>
 							</li>
 							<li class="partner-link" data-partner-id="hamon">
-								<div class="partner-logo"><img src="img/partners/hamon.png"></div>
+								<div class="partner-logo"><img src="img/partners/hamon.png" alt="Hamon"></div>
 								<p class="partner-text">Après un premier partenariat en 2011, le Hamon Thermal Europe France renouvelle son soutien pour la saison 2012-2013.</p>
 							</li>
 							<li class="partner-link" data-partner-id="malban">
-								<div class="partner-logo"><img src="img/partners/malban.png"></div>
+								<div class="partner-logo"><img src="img/partners/malban.png" alt="Malban"></div>
 								<p class="partner-text">Après un premier partenariat en 2011, le Hamon Thermal Europe France renouvelle son soutien pour la saison 2012-2013.</p>
 							</li>
 						</ul>
@@ -162,20 +168,30 @@
 					</div>
 				</div>
 			</div>
-			<div class="current-partners floated-right">
-				<div class="partner-detail active" id="pco">
-					<p>Établir la bonne stratégie PLM, réduire les risques et les coûts de mise en œuvre et de possession, accroître l’efficacité des différents acteurs de l’innovation grâce à une meilleure utilisation de leurs solutions PLM : voilà autant de problématiques auxquelles les entreprises sont confrontées et qui nécessitent des transformations profondes de l’organisation, des processus et du système d’information.</p>
-					<p>C’est pour permettre aux entreprises de réussir ces transformations que PCO Innovation met à disposition une offre de services complète, tant sur les connaissances métiers que sur le domaine des technologies, portée par une force de frappe de plus de 600 professionnels et experts intervenant sur les 5 continents. PCO Innovation compte parmi ses clients de nombreux acteurs majeurs des domaines suivants : Aéronautique & Défense, Automobile & Transport, Équipements industriels, Électronique & High-Tech, Ingénierie & Process, Pharmacie & Agroalimentaire, etc.</p>
-					<p>Expertise, agilité et qualité sont les principes fondamentaux de l’offre PCO Innovation. En complément de son savoir-faire en conseil, en intégration technologique, en conduite de projets et du changement ou en support et maintenance, PCO Innovation propose une expertise technologique forte sur l’ensemble des briques du système d’information PLM, tant en termes de création d’information (CFAO, calcul) que de gestion collaborative (PDM, MPM). PCO Innovation dispose de partenariats opérationnels avec les principaux éditeurs de </p>
+			<div class="current-partners-wrapper floated-right">
+				<div class="current-partners-inner">
+					<div class="partner-detail-wrapper active" id="pco">
+						<div class="partner-detail-inner">
+							<p>Établir la bonne stratégie PLM, réduire les risques et les coûts de mise en œuvre et de possession, accroître l’efficacité des différents acteurs de l’innovation grâce à une meilleure utilisation de leurs solutions PLM : voilà autant de problématiques auxquelles les entreprises sont confrontées et qui nécessitent des transformations profondes de l’organisation, des processus et du système d’information.</p>
+							<p>C’est pour permettre aux entreprises de réussir ces transformations que PCO Innovation met à disposition une offre de services complète, tant sur les connaissances métiers que sur le domaine des technologies, portée par une force de frappe de plus de 600 professionnels et experts intervenant sur les 5 continents. PCO Innovation compte parmi ses clients de nombreux acteurs majeurs des domaines suivants : Aéronautique & Défense, Automobile & Transport, Équipements industriels, Électronique & High-Tech, Ingénierie & Process, Pharmacie & Agroalimentaire, etc.</p>
+							<p>Expertise, agilité et qualité sont les principes fondamentaux de l’offre PCO Innovation. En complément de son savoir-faire en conseil, en intégration technologique, en conduite de projets et du changement ou en support et maintenance, PCO Innovation propose une expertise technologique forte sur l’ensemble des briques du système d’information PLM, tant en termes de création d’information (CFAO, calcul) que de gestion collaborative (PDM, MPM). PCO Innovation dispose de partenariats opérationnels avec les principaux éditeurs de </p>
+						</div>
+						<a href="#" class="icon icon-arrow-right partner-discover-link">Découvrez <span>PCO nnovation</span></a>
+					</div>
+					<div class="partner-detail-wrapper" id="hamon">
+						<div class="partner-detail-inner">
+							<p>Établir la bonne stratégie PLM, réduire les risques et les coûts de mise en œuvre et de possession, accroître l’efficacité des différents acteurs de l’innovation grâce à une meilleure utilisation de leurs solutions PLM : voilà autant de problématiques auxquelles les entreprises sont confrontées et qui nécessitent des transformations profondes de l’organisation, des processus et du système d’information.</p>
+						</div>
+						<a href="#" class="icon icon-arrow-right partner-discover-link">Découvrez <span>Hamon</span></a>
+					</div>
+					<div class="partner-detail-wrapper" id="malban">
+						<div class="partner-detail-inner">
+							<p>Établir la bonne stratégie PLM, réduire les risques et les coûts de mise en œuvre et de possession, accroître l’efficacité des différents acteurs de l’innovation grâce à une meilleure utilisation de leurs solutions PLM : voilà autant de problématiques auxquelles les entreprises sont confrontées et qui nécessitent des transformations profondes de l’organisation, des processus et du système d’information.</p>
+							<p>C’est pour permettre aux entreprises de réussir ces transformations que PCO Innovation met à disposition une offre de services complète, tant sur les connaissances métiers que sur le domaine des technologies, portée par une force de frappe de plus de 600 professionnels et experts intervenant sur les 5 continents. PCO Innovation compte parmi ses clients de nombreux acteurs majeurs des domaines suivants : Aéronautique & Défense, Automobile & Transport, Équipements industriels, Électronique & High-Tech, Ingénierie & Process, Pharmacie & Agroalimentaire, etc.</p>
+						</div>
+						<a href="#" class="icon icon-arrow-right partner-discover-link">Découvrez <span>Malban</span></a>
+					</div>
 				</div>
-				<div class="partner-detail" id="hamon">
-					<p>Établir la bonne stratégie PLM, réduire les risques et les coûts de mise en œuvre et de possession, accroître l’efficacité des différents acteurs de l’innovation grâce à une meilleure utilisation de leurs solutions PLM : voilà autant de problématiques auxquelles les entreprises sont confrontées et qui nécessitent des transformations profondes de l’organisation, des processus et du système d’information.</p>
-				</div>
-				<div class="partner-detail" id="malban">
-					<p>Établir la bonne stratégie PLM, réduire les risques et les coûts de mise en œuvre et de possession, accroître l’efficacité des différents acteurs de l’innovation grâce à une meilleure utilisation de leurs solutions PLM : voilà autant de problématiques auxquelles les entreprises sont confrontées et qui nécessitent des transformations profondes de l’organisation, des processus et du système d’information.</p>
-					<p>C’est pour permettre aux entreprises de réussir ces transformations que PCO Innovation met à disposition une offre de services complète, tant sur les connaissances métiers que sur le domaine des technologies, portée par une force de frappe de plus de 600 professionnels et experts intervenant sur les 5 continents. PCO Innovation compte parmi ses clients de nombreux acteurs majeurs des domaines suivants : Aéronautique & Défense, Automobile & Transport, Équipements industriels, Électronique & High-Tech, Ingénierie & Process, Pharmacie & Agroalimentaire, etc.</p>
-				</div>
-				<a href="#">Découvrez PCO nnovation</a>
 			</div>
 		</div>
 	</section>
@@ -233,6 +249,10 @@
 	</footer>
 
 	<script src="scripts/libs/jquery.min.js"></script>
+	<script src="scripts/libs/jquery.slimscroll.min.js"></script>
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<script src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+
 	<script src="scripts/app.js"></script>
 </body>
 </html>

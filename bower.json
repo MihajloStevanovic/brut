@@ -19,6 +19,8 @@
     "tests"
   ],
   "devDependencies": {
-    "jquery": "~2.2.0"
+    "jquery": "~2.2.0",
+    "fullcalendar": "^2.7.2",
+    "moment": "^2.13.0"
   }
 }
