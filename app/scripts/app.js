@@ -100,14 +100,23 @@ var BRUTASSO = {
 		window.fbAsyncInit = function() {
 			FB.init({
 				appId      : '423617124508884',
+				appSecret  : '09e84dc10b6429f45f192916e7a40946',
 				xfbml      : true,
 				version    : 'v2.4'
 			});
 
-			FB.login();
+			//FB.login();
+
+			FB.getLoginStatus(function(response) {
+					console.log(response);
+			  if (response.status === 'connected') {
+			    var accessToken = response.authResponse.accessToken;
+								console.log(accessToken);
+			  } 
+			} );
 
 			FB.api(
-				'/171019589716262',
+				'293698317636721',
 				'GET',
 				{"fields":"access_token"},
 				function(response) {
