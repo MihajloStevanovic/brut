@@ -30,7 +30,7 @@ var BRUTASSO = {
 		}
 	},
 	scrollTo: function(){
-		$('.navigation a, .scroll-down').on('click',function(e){
+		$('.scroll-link').on('click',function(e){
 			e.preventDefault();
 			var sectionId = $(this).attr('data-section'),
 				section = $('#'+sectionId).offset().top,
@@ -44,9 +44,16 @@ var BRUTASSO = {
 	},
 	scrollSpy: function(){
 		$('.section').each(function(){
-			var sectionPos = $(this).offset().top;
-			if($(window).scrollTop() >= sectionPos + $(window).height()){
-				console.log(this).attr('id');
+			var sectionPos = $(this).offset().top,
+				refNav = $(this).attr('id'),
+				headerHeight = $('#header').height();
+			if($(window).scrollTop() >= sectionPos - headerHeight) {
+				$('.navigation a').each(function(){
+					if($(this).attr('data-section') === refNav){
+						$('.navigation a').removeClass('active');
+						$(this).addClass('active');
+					}
+				});
 			}
 		});
 	},
@@ -65,7 +72,6 @@ var BRUTASSO = {
 		$('.partner-link').on('click',function(e){
 			e.preventDefault();
 			var currentPartner = $(this).attr('data-partner-id');
-			console.log(currentPartner);
 			$('.partner-link').removeClass('active');
 			$(this).addClass('active');
 			$('.partner-detail-wrapper').removeClass('active');
@@ -98,18 +104,17 @@ var BRUTASSO = {
 				version    : 'v2.4'
 			});
 
-			/* make the API call */
+			FB.login();
+
 			FB.api(
-			    "/me/feed",
-			    function (response) {
-			        console.log(response);
-			      if (response && !response.error) {
-			        /* handle the result */
-			        console.log(response);
-			      }
-			    }
+				'/171019589716262',
+				'GET',
+				{"fields":"access_token"},
+				function(response) {
+					console.log(response);
+				}
 			);
-			
+
 		};
 
 		(function(d, s, id){
@@ -133,12 +138,14 @@ var BRUTASSO = {
 		this.getFbApi();
 	},
 	scrollInit: function(){
-		//this.scrollSpy();
+		this.scrollSpy();
 	}
 }
 
 $(document).ready(function(){
 	BRUTASSO.init();
+	 $('.parallax').parallax();
+
 })
 $(window).load(function(){
 	BRUTASSO.loader();

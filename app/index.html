@@ -12,20 +12,25 @@
 	<header class="page-header" id=header>
 		<div class="wrapper auto table">
 			<div class="logo">
-				<img src="img/logo-brut.png" alt="association brut">
+				<a href="#" title="Association Brut" class="scroll-link" data-section="home">
+					<img src="img/logo-brut.png" alt="association brut">
+				</a>
 			</div>
 			<nav class="navigation">
 				<ul>
-					<li><a href="#" title="à propos" data-section="about">à propos</a></li>
-					<li><a href="#" title="côté sportif" data-section="events">côté sportif</a></li>
-					<li><a href="#" title="agenda" data-section="agenda">agenda</a></li>
-					<li><a href="#" title="partenaires" data-section="partners">partenaires</a></li>
-					<li><a href="#" title="où nous trouver" data-section="contact">où nous trouver</a></li>
+					<li><a href="#" title="à propos" class="scroll-link" data-section="about">à propos</a></li>
+					<li><a href="#" title="côté sportif" class="scroll-link" data-section="events">côté sportif</a></li>
+					<li><a href="#" title="agenda" class="scroll-link" data-section="agenda">agenda</a></li>
+					<li><a href="#" title="partenaires" class="scroll-link" data-section="partners">partenaires</a></li>
+					<li><a href="#" title="où nous trouver" class="scroll-link" data-section="contact">où nous trouver</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
-	<section class="section relative table valign-wrapper" id="home">
+	<section class="section relative table valign-wrapper parallax-container" id="home">
+
+			<div class="parallax"><img src="img/bg/home-parallax.jpg"></div>
+
 		<div class="valign-content">
 			<h1 class="home-title">Association des anciens joueurs <br />des Universités de Technologie</h1>
 			<p class="home-description">L’esprit Barbarians, c’est avant tout d’intégrer<br />des joueurs qui portent l’esprit de ce beau<br />jeu sur le terrain et dans la vie</p>
@@ -39,7 +44,7 @@
 				</ul>
 			</div>
 		</div>
-		<a href="#" class="icon icon-scroll-down scroll-down" title="à propos" data-section="about"></a>
+		<a href="#" class="icon icon-scroll-down scroll-link" title="à propos" data-section="about"></a>
 	</section>
 	<section class="section" id="about">
 		<div class="wrapper auto table">
@@ -111,7 +116,7 @@
 	</section>
 	<section class="section" id="agenda">
 		<header class="agenda-wrapper auto">
-			<h2 class="cl-fff">aganda</h2>
+			<h2 class="cl-fff">agenda</h2>
 			<a href="#" class="sync-link icon icon-calendar">Synchroniser avec mon agenda</a>
 		</header>
 		<div class="agenda-wrapper auto table">
@@ -252,6 +257,7 @@
 	<script src="scripts/libs/jquery.slimscroll.min.js"></script>
 	<script src="bower_components/moment/min/moment.min.js"></script>
 	<script src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 	<script src="scripts/app.js"></script>
 </body>
