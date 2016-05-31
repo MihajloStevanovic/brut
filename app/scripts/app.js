@@ -107,22 +107,26 @@ var BRUTASSO = {
 
 			//FB.login();
 
-			FB.getLoginStatus(function(response) {
-					console.log(response);
-			  if (response.status === 'connected') {
-			    var accessToken = response.authResponse.accessToken;
-								console.log(accessToken);
-			  } 
-			} );
+			// FB.getLoginStatus(function(response) {
+			// 		console.log(response);
+			//   if (response.status === 'connected') {
+			//     var accessToken = response.authResponse.accessToken;
+			// 					console.log(accessToken);
+			//   } 
+			// } );
 
 			FB.api(
-				'293698317636721',
+				'/1753766691534387',
 				'GET',
 				{"fields":"access_token"},
 				function(response) {
 					console.log(response);
 				}
 			);
+
+			$.getJSON('https://graph.facebook.com/171019589716262/feed?access_token=423617124508884|1_YzP1i_-dX_fy9uujKM_AUqwRo',function(data){
+				BRUTASSO.getFbPosts(data);
+			})
 
 		};
 
@@ -134,6 +138,24 @@ var BRUTASSO = {
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 
+	},
+	getFbPosts: function(data){
+		console.log(data);
+		var nb = 0;
+		for(var i in data.data){
+			if(data.data[i].message && nb < 4){
+				var date = new Date(data.data[i].created_time);
+				$('.fb-posts').append('<div class="post">'+
+					'<a href="https://www.facebook.com/barbarians.rut/posts/'+data.data[i].id.substring(16,100)+'" target="-blank">'+
+					'<div class="fb-post-img"><img src="" /></div>'+
+					'<div class="fb-post-date">'+date+'</div>'+
+					'<div class="fb-post-text">'+data.data[i].message.substring(0,100)+'</div>'+
+					'</a>'+
+				'</div>');
+				nb++;
+			}
+			
+		}
 	},
 
 	/* Init the functions */
