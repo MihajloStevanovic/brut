@@ -49,7 +49,7 @@ module.exports = function(grunt) {
   });
 
   // Load the plugin that provides the all tasks.
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass', 'sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
 

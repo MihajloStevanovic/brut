@@ -94,6 +94,10 @@ var BRUTASSO = {
 				center: 'title',
 				right: 'next'
 		    },
+		    googleCalendarApiKey: 'AIzaSyDQW7tnTrOTaSYa63d_ngBF5PkfHOy8uMY',
+	        events: {
+	            googleCalendarId: 'ss1o72lk8u52k7o3ankh1bro54@group.calendar.google.com'
+	        }
 		});
 	},
 	getFbApi: function(){
