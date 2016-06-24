@@ -24,3 +24,11 @@
 	z-index: 200;
 	background: #4D656D;
 }
+
+.lazy-load {
+	opacity: 0;
+	transition: .5s all ease-in-out;
+	&.loaded {
+		opacity: 1;
+	}
+}

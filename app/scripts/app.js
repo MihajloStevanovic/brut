@@ -128,9 +128,7 @@ var BRUTASSO = {
 				}
 			);*/
 
-			$.getJSON('https://graph.facebook.com/171019589716262/feed?access_token=423617124508884|1_YzP1i_-dX_fy9uujKM_AUqwRo',function(data){
-				BRUTASSO.getFbPosts(data);
-			})
+			
 
 		};
 
@@ -144,14 +142,16 @@ var BRUTASSO = {
 
 	},
 	getFbPosts: function(data){
-		var nb = 0;
-		for(var i in data.data){
-			if((data.data[i].message || data.data[i].story) && nb < 4){
-				BRUTASSO.getPostDetail(data.data[i].id);
-				
-				nb++;
+		$.getJSON('https://graph.facebook.com/171019589716262/feed?access_token=423617124508884|1_YzP1i_-dX_fy9uujKM_AUqwRo',function(data){
+			var nb = 0;
+			for(var i in data.data){
+				if((data.data[i].message || data.data[i].story) && nb < 4){
+					BRUTASSO.getPostDetail(data.data[i].id);
+					
+					nb++;
+				}
 			}
-		}
+		});
 	},
 
 	getPostDetail: function(id){
@@ -161,12 +161,21 @@ var BRUTASSO = {
 				image = data.picture ? data.picture : 'img/logo-brut.png'
 			$('.fb-posts').append('<div class="post">'+
 				'<a href="https://www.facebook.com/barbarians.rut/posts/'+data.id.substring(16,100)+'" target="-blank">'+
-				'<div class="fb-post-img"><img src="'+image+'" /></div>'+
+				'<div class="fb-post-img lazy-load"><img src="'+image+'" /></div>'+
 				'<div class="fb-post-date">'+date+'</div>'+
 				'<div class="fb-post-text">'+text+'...</div>'+
 				'</a>'+
 			'</div>');
 		})
+	},
+	lazyLoad: function(){
+		$('.lazy-load').each(function(){
+			var $this = $(this),
+				top = $this.offset().top;
+			if(($(window).scrollTop() + $(window).height()) > top){
+				$this.addClass('loaded');
+			}
+		});
 	},
 
 	/* Init the functions */
@@ -178,9 +187,11 @@ var BRUTASSO = {
 		this.customScrollBar();
 		this.calendar();
 		this.getFbApi();
+		this.getFbPosts();
 	},
 	scrollInit: function(){
 		this.scrollSpy();
+		this.lazyLoad();
 	}
 }
 
