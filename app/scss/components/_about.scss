@@ -107,6 +107,10 @@
 		border-radius: 50px;
 		overflow: hidden;
 		margin: 10px 10px 0 0;
+		img {
+			display: block;
+			max-height: 100%;
+		}
 	}
 	.fb-post-date {
 		font-family: 'Monserrat-light';
