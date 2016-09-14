@@ -21,6 +21,7 @@
   "devDependencies": {
     "jquery": "~2.2.0",
     "fullcalendar": "^2.7.2",
-    "moment": "^2.13.0"
+    "moment": "^2.13.0",
+    "materialize": "^0.97.7"
   }
 }

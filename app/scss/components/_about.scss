@@ -11,9 +11,8 @@
 	.title-section,
 	p {
 		padding: 25px 25px 0 30px;
-		sizing: border-box;
+		box-sizing: border-box;
 		-webkit-box-sizing: border-box;
-		box-sizing: border;
 	}
 	.bg-yellow {
 		background: #eee657; /* Old browsers */
@@ -29,6 +28,7 @@
 		font-style: italic;
 	}
 	.fb-posts-bg {
+		position: relative;
 		min-height: 700px;
 		background: #333333; /* Old browsers */
 		background: -moz-linear-gradient(-45deg,  #333333 0%, #010101 100%); /* FF3.6-15 */
@@ -49,9 +49,8 @@
 	.col-right {
 		width: 370px;
 		padding: 0 0 0 30px;
-		sizing: border-box;
+		box-sizing: border-box;
 		-webkit-box-sizing: border-box;
-		box-sizing: border;
 		vertical-align: bottom;
 	}
 	.icon-quote:before {
@@ -67,8 +66,8 @@
 	.fb-posts-bg {
 		color: #fff;
 		padding: 50px 27px;
+		box-sizing: border-box;
 		-webkit-box-sizing: border-box;
-		box-sizing: border;
 		h2 {
 			font-family: 'Monserrat-ultralight';
 		    font-size: 24px;
@@ -126,6 +125,28 @@
 		font-family: 'Monserrat-ultralight';
 		font-size: 14px;
 		margin: 10px 0;
+	}
+
+	.social-action {
+		position: absolute;
+		bottom: 0;
+		height: 70px;
+		line-height: 70px;
+		border-top: 1px solid #fff;
+		width: 100%;
+		padding: 0 0 0 15px;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		span {
+			font-family: 'Monserrat-ultralight';
+		    font-size: 15px;
+		    color: #fff;
+		}
+		ul, li, span {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 5px;
+		}
 	}
 	
 }

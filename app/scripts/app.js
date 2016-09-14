@@ -68,7 +68,7 @@ var BRUTASSO = {
 			$('#'+currentTab).addClass('active');
 		})
 	},
-	getPartnersDetails(){
+	getPartnersDetails: function(){
 		$('.partner-link').on('click',function(e){
 			e.preventDefault();
 			var currentPartner = $(this).attr('data-partner-id');
@@ -156,13 +156,15 @@ var BRUTASSO = {
 
 	getPostDetail: function(id){
 		$.getJSON('https://graph.facebook.com/'+id,function(data){
+			console.log(data.created_time);
 			var date = new Date(data.created_time),
 				text = data.message ? data.message.substring(0,100) : data.story.substring(0,100);
-				image = data.picture ? data.picture : 'img/logo-brut.png'
+				image = data.picture ? data.picture : 'img/logo-brut.png';
+				console.log(date.toGMTString());
 			$('.fb-posts').append('<div class="post">'+
 				'<a href="https://www.facebook.com/barbarians.rut/posts/'+data.id.substring(16,100)+'" target="-blank">'+
 				'<div class="fb-post-img lazy-load"><img src="'+image+'" /></div>'+
-				'<div class="fb-post-date">'+date+'</div>'+
+				'<div class="fb-post-date">'+date.toGMTString()+'</div>'+
 				'<div class="fb-post-text">'+text+'...</div>'+
 				'</a>'+
 			'</div>');
@@ -188,6 +190,7 @@ var BRUTASSO = {
 		this.calendar();
 		this.getFbApi();
 		this.getFbPosts();
+		this.lazyLoad();
 	},
 	scrollInit: function(){
 		this.scrollSpy();

@@ -4,7 +4,6 @@
 	text-align: center;
 	&.parallax-container {
 	    position: relative;
-	    overflow: hidden;
 	    height: 500px;
 	}
 	.parallax {
@@ -14,6 +13,7 @@
 	    right: 0;
 	    bottom: 0;
 	    z-index: -1;
+	    overflow: hidden;
 	}
 	.parallax img {
 	    display: none;
