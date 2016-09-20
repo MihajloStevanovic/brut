@@ -16,7 +16,7 @@
   transition: background 0.2s ease-in-out; */
   .logo {
     float: left;
-    img {
+    picture {
       display: block;
     }
   }
@@ -40,6 +40,22 @@
         &.active {
           background: rgba(5, 11, 40, 0.17);
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 74em) {
+  .page-header {
+    .navigation {
+      display: none;
+    }
+    .logo {
+      float: none;
+      text-align: center;
+      picture {
+        display: inline-block;
+        vertical-align: middle;
       }
     }
   }

@@ -1,6 +1,9 @@
 'use strict';
 module.exports = function(grunt) {
 
+  // Lazyload grunt tasks.
+  require('grunt-lazyload')(grunt);
+
   var config = {
     styles: [
       'app/bower_components/fullcalendar/dist/fullcalendar.min.css',
@@ -156,15 +159,15 @@ module.exports = function(grunt) {
   });
 
   // Load the plugin that provides the all tasks.
-  grunt.loadNpmTasks('grunt-sass', 'sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-browser-sync');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-copy','copy');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.lazyLoadNpmTasks('grunt-sass', 'sass');
+  grunt.lazyLoadNpmTasks('grunt-contrib-watch','watch');
+  grunt.lazyLoadNpmTasks('grunt-browser-sync','browserSync');
+  grunt.lazyLoadNpmTasks('grunt-contrib-concat');
+  grunt.lazyLoadNpmTasks('grunt-contrib-cssmin');
+  grunt.lazyLoadNpmTasks('grunt-contrib-uglify');
+  grunt.lazyLoadNpmTasks('grunt-contrib-copy','copy');
+  grunt.lazyLoadNpmTasks('grunt-contrib-htmlmin');
+  grunt.lazyLoadNpmTasks('grunt-contrib-clean');
 
   // Default task(s).
   grunt.registerTask('default', [
