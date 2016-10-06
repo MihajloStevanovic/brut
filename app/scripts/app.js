@@ -4,7 +4,8 @@
 var BRUTASSO = {
 
 	settings: {
-		scrollTop: 0
+		scrollTop: 0,
+		opacity : 0.2
 	},
 
 	/* Manage page loader */
@@ -23,11 +24,23 @@ var BRUTASSO = {
 		$('.home-description').addClass('visible');
 	},
 	navOpacity: function(){
-		var newPosition = $(window).scrollTop(),
-			newOpacity = newPosition/10;
-		if(newOpacity > 10 && newOpacity < 90) {
-			$('.page-header').css('background','rgba(0, 80, 120, 0.'+newPosition/10+')');
+		var newPosition = $(window).scrollTop();
+		var stop = $('#about').offset().top;
+		if(newPosition > this.settings.scrollTop && newPosition < stop){
+			if(this.settings.opacity < 1) {
+				this.settings.opacity += 0.01;
+			}
+		} else {
+			if(this.settings.opacity > 0.2 && newPosition < stop) {
+				this.settings.opacity -= 0.01;
+			}
 		}
+		$('.page-header').css('background','rgba(0, 80, 120, '+this.settings.opacity+')');
+		this.settings.scrollTop = newPosition;
+
+		if(newPosition == 0) {
+			$('.page-header').css('background','rgba(0, 80, 120, 0.2');
+		} 
 	},
 	scrollTo: function(){
 		$('.scroll-link').on('click',function(e){
@@ -40,6 +53,7 @@ var BRUTASSO = {
 			$('html,body').animate({
 				scrollTop: section - headerHeight
 			},'slow');
+			BRUTASSO.navOpacity();
 		})
 	},
 	scrollSpy: function(){
@@ -156,11 +170,9 @@ var BRUTASSO = {
 
 	getPostDetail: function(id){
 		$.getJSON('https://graph.facebook.com/'+id,function(data){
-			console.log(data.created_time);
 			var date = new Date(data.created_time),
 				text = data.message ? data.message.substring(0,100) : data.story.substring(0,100);
-				image = data.picture ? data.picture : 'img/logo-brut.png';
-				console.log(date.toGMTString());
+				image = data.picture ? data.picture : 'img/logo-brut-light.png';
 			$('.fb-posts').append('<div class="post">'+
 				'<a href="https://www.facebook.com/barbarians.rut/posts/'+data.id.substring(16,100)+'" target="-blank">'+
 				'<div class="fb-post-img lazy-load"><img src="'+image+'" /></div>'+
@@ -208,5 +220,5 @@ $(window).load(function(){
 })
 $(window).scroll(function(){
 	BRUTASSO.scrollInit();
-	//BRUTASSO.navOpacity();
+	BRUTASSO.navOpacity();
 })

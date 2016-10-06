@@ -1,5 +1,7 @@
 'use strict';
 module.exports = function(grunt) {
+  // Time how long tasks take. Can help when optimizing build times
+  require('time-grunt')(grunt);
 
   // Lazyload grunt tasks.
   require('grunt-lazyload')(grunt);
@@ -34,7 +36,7 @@ module.exports = function(grunt) {
         files: [{                         // Dictionary of files
           expand: true,
           cwd: 'app/scss/',
-          src: ['main.scss'],
+          src: ['*.{scss,sass}'],
           dest: 'app/styles/',
           ext: '.css'
         }]
@@ -43,23 +45,23 @@ module.exports = function(grunt) {
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       sass: {
-        files: ['**/*.scss'],
+        files: ['app/scss/**/*.{scss,sass}'],
         tasks: ['sass']
       },
-      scripts: {
-        files: ['**/*.js']
+      scripts: {  
+        files: ['app/js/*.js']
       },
       html: {
-        files: ['**/*.html']
+        files: ['app/index.html']
       }
     },
     browserSync: {
       dev: {
         bsFiles: {
           src : [
-            '**/*.css',
-            '**/*.html',
-            '**/*.js'
+            'app/scss/**/*.css',
+            'app/index.html',
+            'app/js/*.js'
           ]
         },
         options: {
@@ -162,12 +164,12 @@ module.exports = function(grunt) {
   grunt.lazyLoadNpmTasks('grunt-sass', 'sass');
   grunt.lazyLoadNpmTasks('grunt-contrib-watch','watch');
   grunt.lazyLoadNpmTasks('grunt-browser-sync','browserSync');
-  grunt.lazyLoadNpmTasks('grunt-contrib-concat');
-  grunt.lazyLoadNpmTasks('grunt-contrib-cssmin');
-  grunt.lazyLoadNpmTasks('grunt-contrib-uglify');
+  grunt.lazyLoadNpmTasks('grunt-contrib-concat','concat');
+  grunt.lazyLoadNpmTasks('grunt-contrib-cssmin','cssmin');
+  grunt.lazyLoadNpmTasks('grunt-contrib-uglify','uglify');
   grunt.lazyLoadNpmTasks('grunt-contrib-copy','copy');
-  grunt.lazyLoadNpmTasks('grunt-contrib-htmlmin');
-  grunt.lazyLoadNpmTasks('grunt-contrib-clean');
+  grunt.lazyLoadNpmTasks('grunt-contrib-htmlmin','htmlmin');
+  grunt.lazyLoadNpmTasks('grunt-contrib-clean','clean');
 
   // Default task(s).
   grunt.registerTask('default', [
