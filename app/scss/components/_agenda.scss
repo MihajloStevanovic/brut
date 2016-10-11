@@ -7,7 +7,7 @@
 	}
 	h2 {
 		font-family: 'Monserrat-ultralight';
-		font-size: 38px;
+		font-size: 30px;
 		color: #fff;
 		font-weight: 100;
 		text-transform: uppercase;
@@ -36,12 +36,22 @@
 	.current-event-date {
 		width: 90px;
 		height: 90px;
-		line-height: 90px;
+		line-height: 1;
 		color: #174b7e;
 		text-align: center;
 		border: 2px solid #174b7e;
 		-webkit-border-radius: 50px;
 		border-radius: 50px;
+	}
+	.current-event-day {
+		font-family: 'Arial';
+		font-size: 42px;
+		margin: 10px 0 0 0;
+	}
+	.current-event-month {
+		font-family: 'Monserrat-ultralight';
+	    font-size: 22px;
+	    text-transform: uppercase;
 	}
 	.current-event-content {
 		font-family: 'Monserrat-regular';
@@ -106,7 +116,7 @@
 	}
 	.fc-ltr .fc-basic-view .fc-day-number {
 		font-family: 'Monserrat-regular';
-		font-size: 20px;
+		font-size: 18px;
 		text-align: center;
 		/* border: 3px solid #fff;
 		-webkit-border-radius: 15px;
@@ -115,7 +125,67 @@
 	.fc-unthemed .fc-today{
 		background: none;
 		//border: 3px solid #fff;
-		background: #023650;
+		/* background: #023650; */
+	}
+	.fc-button {
+		width: 45px;
+		height: 45px;
+		border: 2px solid #fff;
+		-webkit-border-radius: 25px;
+		border-radius: 25px;
+		background: none;
+		margin: 15px 0 0 0;
+		span {
+			top: 0;
+			margin: 0;
+			height: 32px;
+    		text-align: center;
+		}
+		.fc-icon:after {
+		    font-size: 400%;
+		    color: #fff;
+		    top: 6px;
+		    left: 0;
+		}
+	}
+	.fc .fc-event-container a {
+
+		width: 32px;
+		height: 33px;
+		border: 2px solid #fff;
+		-webkit-border-radius: 33px;
+		border-radius: 33px;
+		background: none;
+		margin: auto;
+		transition: .3s all ease-in-out;
+		&.current {
+			background: rgba(255, 255, 255, 0.48);
+		}
+		.fc-content {
+			display: none;
+		}
+
+	}
+	.fc-content-skeleton tbody {
+		position: absolute;
+		margin: -30px 0 0 0;
+		td {
+			width: 47px;
+		}
+	}
+	.fc-day-grid-event {
+		margin: 0;
+		padding: 0;
+	}
+	.fc-head {
+		display: block;
+		margin: 0 0 20px 0;
+	}
+	.fc-day-grid-container {
+		padding: 5px 0 0;
+	}
+	.fc-day-number.fc-other-month {
+		opacity: 1
 	}
 
 }

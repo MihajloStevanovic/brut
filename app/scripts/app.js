@@ -102,7 +102,7 @@ var BRUTASSO = {
 	},
 	calendar: function(){
 		$('.calendar').fullCalendar({
-			height: 450,
+			height: 430,
 			header: {
 				left: 'prev',
 				center: 'title',
@@ -111,7 +111,32 @@ var BRUTASSO = {
 		    googleCalendarApiKey: 'AIzaSyDQW7tnTrOTaSYa63d_ngBF5PkfHOy8uMY',
 	        events: {
 	            googleCalendarId: 'ss1o72lk8u52k7o3ankh1bro54@group.calendar.google.com'
-	        }
+	        },
+	        eventClick: function(calEvent, jsEvent, view) {
+		        BRUTASSO.displayCurrentEvent(calEvent, jsEvent, view);
+		    },
+		    events: function(events){
+		    	console.log(events);
+		    }
+		});
+	},
+	displayCurrentEvent: function(calEvent, jsEvent, view){
+		$('body').on('click','.fc-day-grid-event',function(e){
+			e.preventDefault();
+			var day = calEvent._start._d.toString().split(' ')[2],
+				month = calEvent._start._d.toString().split(' ')[1],
+				hour = calEvent,
+				place = calEvent.location,
+				title = calEvent.title,
+				text = calEvent.description;
+			$('.current-event-day').html(day);
+			$('.current-event-month').html(month);
+			$('.current-event-title').html(title);
+			$('.current-event-text').html(text);
+			$('.current-event-place span').html(place);
+			/*$('.current-event-hour').html(hour);*/
+			$('.fc-day-grid-event').removeClass('current');
+			$(this).addClass('current');
 		});
 	},
 	getFbApi: function(){
