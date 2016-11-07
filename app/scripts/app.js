@@ -4,8 +4,8 @@
 var BRUTASSO = {
 
 	settings: {
-		scrollTop: 0,
-		opacity : 0.2
+		scrollTop: 0
+		//opacity : 0.2
 	},
 
 	/* Manage page loader */
@@ -25,6 +25,13 @@ var BRUTASSO = {
 	},
 	navOpacity: function(){
 		var newPosition = $(window).scrollTop();
+		var stop = $('#about').offset().top - 100;
+		if(newPosition<= stop) {
+			$('.page-header').addClass('transparent');
+		} else {
+			$('.page-header').removeClass('transparent');
+		}
+		/*var newPosition = $(window).scrollTop();
 		var stop = $('#about').offset().top;
 		if(newPosition > this.settings.scrollTop && newPosition < stop){
 			if(this.settings.opacity < 1) {
@@ -40,7 +47,7 @@ var BRUTASSO = {
 
 		if(newPosition == 0) {
 			$('.page-header').css('background','rgba(0, 80, 120, 0.2');
-		} 
+		} */
 	},
 	scrollTo: function(){
 		$('.scroll-link').on('click',function(e){
@@ -110,34 +117,48 @@ var BRUTASSO = {
 		    },
 		    googleCalendarApiKey: 'AIzaSyDQW7tnTrOTaSYa63d_ngBF5PkfHOy8uMY',
 	        events: {
-	            googleCalendarId: 'ss1o72lk8u52k7o3ankh1bro54@group.calendar.google.com'
+	            googleCalendarId: 'ss1o72lk8u52k7o3ankh1bro54@group.calendar.google.com',
+	            success: function(data) {
+		            var firstEvent = data[0];
+		            console.log(data);
+					$('.current-event-day').html(firstEvent.start.split('T')[0].split('-')[2]);
+					$('.current-event-month').html(firstEvent.start.split('-')[1]);
+					$('.current-event-title').html(firstEvent.title);
+					$('.current-event-text').html(firstEvent.description);
+					$('.current-event-place span').html(firstEvent.location);
+					$('.current-event-hour').html('Horaires de rendez-vous : '+firstEvent.start.split('T')[1].split(':')[0]+'h'+firstEvent.start.split('T')[1].split(':')[1]);
+					$('.fc-day-grid-event').removeClass('current');
+					$(this).addClass('current');
+		        }
 	        },
 	        eventClick: function(calEvent, jsEvent, view) {
-		        BRUTASSO.displayCurrentEvent(calEvent, jsEvent, view);
-		    },
-		    events: function(events){
-		    	console.log(events);
+		        BRUTASSO.handleCurrentEvent(calEvent, jsEvent, view);
 		    }
 		});
 	},
-	displayCurrentEvent: function(calEvent, jsEvent, view){
+	handleCurrentEvent: function(calEvent, jsEvent, view){
 		$('body').on('click','.fc-day-grid-event',function(e){
 			e.preventDefault();
+			var $this = $(this);
+			BRUTASSO.displayCurrentEvent(calEvent, jsEvent, view, $this);
+		});
+	},
+	displayCurrentEvent: function(calEvent, jsEvent, view, $this){
 			var day = calEvent._start._d.toString().split(' ')[2],
 				month = calEvent._start._d.toString().split(' ')[1],
 				hour = calEvent,
 				place = calEvent.location,
 				title = calEvent.title,
-				text = calEvent.description;
+				text = calEvent.description,
+				hour = 'Horaires de rendez-vous : '+calEvent._start._d.toString().split(':')[0].split(' ')[4]+'h'+calEvent._start._d.toString().split(':')[1].split(' ')[0];
 			$('.current-event-day').html(day);
 			$('.current-event-month').html(month);
 			$('.current-event-title').html(title);
 			$('.current-event-text').html(text);
 			$('.current-event-place span').html(place);
-			/*$('.current-event-hour').html(hour);*/
+			$('.current-event-hour').html(hour);
 			$('.fc-day-grid-event').removeClass('current');
-			$(this).addClass('current');
-		});
+			$this.addClass('current');
 	},
 	getFbApi: function(){
 		window.fbAsyncInit = function() {
@@ -228,6 +249,7 @@ var BRUTASSO = {
 		this.getFbApi();
 		this.getFbPosts();
 		this.lazyLoad();
+		this.navOpacity();
 	},
 	scrollInit: function(){
 		this.scrollSpy();

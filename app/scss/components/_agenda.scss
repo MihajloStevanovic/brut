@@ -173,6 +173,10 @@
 			width: 47px;
 		}
 	}
+	.fc-unselectable .fc-content-skeleton tr:nth-child(even) {
+		display: none;
+		/* background: red; */
+	}
 	.fc-day-grid-event {
 		margin: 0;
 		padding: 0;
