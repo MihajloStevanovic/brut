@@ -120,7 +120,7 @@ var BRUTASSO = {
 	            googleCalendarId: 'ss1o72lk8u52k7o3ankh1bro54@group.calendar.google.com',
 	            success: function(data) {
 		            var firstEvent = data[0];
-		            console.log(data);
+		console.log(firstEvent);
 					$('.current-event-day').html(firstEvent.start.split('T')[0].split('-')[2]);
 					$('.current-event-month').html(firstEvent.start.split('-')[1]);
 					$('.current-event-title').html(firstEvent.title);
@@ -144,13 +144,14 @@ var BRUTASSO = {
 		});
 	},
 	displayCurrentEvent: function(calEvent, jsEvent, view, $this){
+		console.log(calEvent);
 			var day = calEvent._start._d.toString().split(' ')[2],
 				month = calEvent._start._d.toString().split(' ')[1],
 				hour = calEvent,
 				place = calEvent.location,
 				title = calEvent.title,
 				text = calEvent.description,
-				hour = 'Horaires de rendez-vous : '+calEvent._start._d.toString().split(':')[0].split(' ')[4]+'h'+calEvent._start._d.toString().split(':')[1].split(' ')[0];
+				hour = 'Horaires de rendez-vous : '+calEvent.start._1.split('T')[1].split(':')[0]+'h'+calEvent.start._1.split('T')[1].split(':')[1]);
 			$('.current-event-day').html(day);
 			$('.current-event-month').html(month);
 			$('.current-event-title').html(title);
@@ -161,36 +162,6 @@ var BRUTASSO = {
 			$this.addClass('current');
 	},
 	getFbApi: function(){
-		window.fbAsyncInit = function() {
-			FB.init({
-				appId      : '423617124508884',
-				appSecret  : '09e84dc10b6429f45f192916e7a40946',
-				xfbml      : true,
-				version    : 'v2.4'
-			});
-
-			//FB.login();
-
-			// FB.getLoginStatus(function(response) {
-			// 		console.log(response);
-			//   if (response.status === 'connected') {
-			//     var accessToken = response.authResponse.accessToken;
-			// 					console.log(accessToken);
-			//   } 
-			// } );
-
-			/*FB.api(
-				'/1753766691534387',
-				'GET',
-				{"fields":"access_token"},
-				function(response) {
-					console.log(response);
-				}
-			);*/
-
-			
-
-		};
 
 		(function(d, s, id){
 			var js, fjs = d.getElementsByTagName(s)[0];
@@ -199,6 +170,15 @@ var BRUTASSO = {
 			js.src = "//connect.facebook.net/en_US/sdk.js";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
+
+		window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '423617124508884',
+	      xfbml      : true,
+	      version    : 'v2.10'
+	    });
+	    FB.AppEvents.logPageView();
+	  };
 
 	},
 	getFbPosts: function(data){

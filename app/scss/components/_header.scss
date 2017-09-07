@@ -24,8 +24,24 @@
   }
   .logo {
     float: left;
-    picture {
-      display: block;
+    .site-title, 
+    figure {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .site-title {
+      font-family: 'Monserrat-heirline';
+      font-size: 32px;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1;
+      .light {
+        font-family: 'Monserrat-light';
+        font-style: italic;
+      }
+    }
+    figure {
+      margin: 0 10px 0 0;
     }
   }
   .navigation {
