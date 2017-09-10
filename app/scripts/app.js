@@ -120,7 +120,6 @@ var BRUTASSO = {
 	            googleCalendarId: 'ss1o72lk8u52k7o3ankh1bro54@group.calendar.google.com',
 	            success: function(data) {
 		            var firstEvent = data[0];
-		console.log(firstEvent);
 					$('.current-event-day').html(firstEvent.start.split('T')[0].split('-')[2]);
 					$('.current-event-month').html(firstEvent.start.split('-')[1]);
 					$('.current-event-title').html(firstEvent.title);
@@ -144,14 +143,16 @@ var BRUTASSO = {
 		});
 	},
 	displayCurrentEvent: function(calEvent, jsEvent, view, $this){
-		console.log(calEvent);
 			var day = calEvent._start._d.toString().split(' ')[2],
 				month = calEvent._start._d.toString().split(' ')[1],
 				hour = calEvent,
 				place = calEvent.location,
 				title = calEvent.title,
-				text = calEvent.description,
-				hour = 'Horaires de rendez-vous : '+calEvent.start._1.split('T')[1].split(':')[0]+'h'+calEvent.start._1.split('T')[1].split(':')[1]);
+				text = calEvent.description;
+
+			if(calEvent.allDay == false) {
+			var hour = 'Horaires de rendez-vous : '+calEvent._start._i.split('T')[1].split(':')[0]+'h'+calEvent._start._i.split('T')[1].split(':')[1];
+			}
 			$('.current-event-day').html(day);
 			$('.current-event-month').html(month);
 			$('.current-event-title').html(title);
@@ -226,8 +227,8 @@ var BRUTASSO = {
 		this.getPartnersDetails();
 		this.customScrollBar();
 		this.calendar();
-		this.getFbApi();
-		this.getFbPosts();
+		//this.getFbApi();
+		//this.getFbPosts();
 		this.lazyLoad();
 		this.navOpacity();
 	},
